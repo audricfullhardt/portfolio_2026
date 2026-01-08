@@ -12,22 +12,22 @@ export default function Hero() {
     >
       <section className="flex items-center">
         <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 px-6">
-          <div className="flex flex-col justify-center gap-6">
+          <div className="flex flex-col justify-left gap-6">
             <h1 className="text-4xl md:text-6xl font-bold text-white">
               Audric
+              <span className="text-emerald-400">.</span>
               <br />
-              <span className="text-emerald-400">Développeur Web</span>
+              <span className="text-emerald-400">web developer</span>
             </h1>
-
-            <p className="text-white/70 max-w-md">
-              Étudiant en BUT MMI, alternant chez Piscines Magiline. Je conçois
-              des expériences web modernes, interactives et performantes.
-            </p>
           </div>
-          <div className="flex items-center justify-center">
-            <div className="h-72 w-72 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20">
-                <img src="/avatar2.png" alt="" className="w-full"/>
-            </div>
+          <div className="relative h-60 w-60 rounded-2xl overflow-hidden">
+            <div className="absolute inset-0 opacity-90 bg-white/10 backdrop-blur-xl border border-white/20" />
+            <img
+              src="/avatar2.png"
+              alt="Avatar"
+              className="relative z-10 w-full h-full object-cover scale-105"
+            />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.25),transparent_60%)] opacity-60" />
           </div>
         </div>
       </section>

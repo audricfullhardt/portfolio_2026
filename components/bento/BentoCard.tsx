@@ -5,9 +5,11 @@ import { motion } from 'framer-motion';
 export default function BentoCard({
   title,
   span,
+  children,
 }: {
   title: string;
   span: string;
+  children?: React.ReactNode;
 }) {
   return (
     <motion.div
@@ -55,8 +57,8 @@ export default function BentoCard({
           bg-[radial-gradient(circle_at_top_left,rgba(0,255,170,0.25),transparent_60%)]
         "
       />
-
       <h3 className="text-xl font-semibold">{title}</h3>
+        {children}
     </motion.div>
   );
 }

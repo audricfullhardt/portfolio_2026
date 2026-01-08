@@ -5,7 +5,6 @@ import DotGrid from '../ui/DotGrid';
 export default function DotBackground() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* DotGrid */}
       <DotGrid
         dotSize={6}
         gap={15}
