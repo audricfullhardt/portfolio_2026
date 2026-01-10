@@ -7,8 +7,8 @@ export default function CustomCursor() {
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
 
-  const x = useSpring(mouseX, { stiffness: 500, damping: 50 });
-  const y = useSpring(mouseY, { stiffness: 500, damping: 50 });
+  const x = useSpring(mouseX, { stiffness: 1000, damping: 50 });
+  const y = useSpring(mouseY, { stiffness: 1000, damping: 50 });
 
   const [scale, setScale] = useState(1);
 

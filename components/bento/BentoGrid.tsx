@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import BentoCard from "./BentoCard";
 import TechStack from "./TechStack";
+import Projects from "./Projects";
 
 const items = [
   { title: "About", span: "col-span-2 row-span-2" },
@@ -14,7 +15,7 @@ const items = [
 export default function BentoGrid() {
   return (
     <motion.div
-      className="grid grid-cols-4 grid-rows-2 gap-4 w-[70%] mx-auto"
+      className="grid grid-cols-4 grid-rows-2 gap-4 w-[70%] mx-auto mb-10"
       initial="hidden"
       animate="visible"
       variants={{
@@ -44,35 +45,10 @@ export default function BentoGrid() {
       </BentoCard>
 
       <BentoCard title="Projects" span="col-span-3 row-span-1">
-        <div className="mt-4 grid grid-cols-3 gap-4">
-          {["Croustillant App", "Site météo", "ScaleTheme App"].map((project) => (
-            <div
-              key={project}
-              className="
-          group relative rounded-xl
-          bg-white/5 border border-white/10
-          p-4
-          hover:border-emerald-400/40
-          transition
-        "
-            >
-              <h4 className="text-white font-medium">{project}</h4>
-              <p className="text-white/50 text-sm mt-1">Voir le projet →</p>
-
-              <div
-                className="
-          absolute inset-0
-          opacity-0 group-hover:opacity-100
-          bg-emerald-400/10
-          transition
-        "
-              />
-            </div>
-          ))}
-        </div>
+        <Projects/>
       </BentoCard>
 
-      <BentoCard title="Get in touch" span="col-span-1 row-span-1">
+      <BentoCard title="Contact" span="col-span-1 row-span-1">
         <div className="mt-4 flex flex-col gap-3 text-white/70">
           <a
             href="mailto:audric.fullhardt.pro@gmail.com"

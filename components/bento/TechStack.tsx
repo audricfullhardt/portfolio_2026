@@ -7,11 +7,18 @@ const stack = [
     'Laravel',
     "C#",
     'TypeScript',
-    'Tailwind CSS',
+    'Tailwind',
+    'Three.js',
     'Framer Motion',
     'Symfony',
     'Node.js',
     'Docker',
+    'Git',
+    'Unity',
+    'MongoDB',
+    'PostgreSQL',
+    'MySQL',
+    'Chart.js',
   ];
   
   export default function TechStack() {
