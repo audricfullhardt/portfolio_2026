@@ -36,7 +36,7 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed top-0 left-0 z-50"
+      className="pointer-events-none fixed top-0 left-0 z-[9999]"
       style={{ x, y }}
       animate={{ scale }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}

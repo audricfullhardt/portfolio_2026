@@ -1,14 +1,24 @@
+"use client";
 
-import Hero from '@/components/hero/Hero';
-import BentoGrid from '@/components/bento/BentoGrid';
-import DotBackground from '@/components/background/DotBackground';
+import { useState } from "react";
+import Hero from "@/components/hero/Hero";
+import BentoGrid from "@/components/bento/BentoGrid";
+import DotBackground from "@/components/background/DotBackground";
+import ProjectModal from "@/components/bento/ProjectModal";
+import { Project } from "@/lib/types";
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   return (
     <>
       <Hero />
-      <BentoGrid />
+      <BentoGrid onProjectClick={setSelectedProject} />
       <DotBackground />
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </>
   );
 }

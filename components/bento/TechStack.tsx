@@ -1,24 +1,18 @@
 const stack = [
     'React',
     'Next.js',
-    'Nuxt',
-    'Vue',
     'React Native',
     'Laravel',
     "C#",
-    'TypeScript',
     'Tailwind',
     'Three.js',
-    'Framer Motion',
     'Symfony',
     'Node.js',
     'Docker',
     'Git',
-    'Unity',
     'MongoDB',
     'PostgreSQL',
     'MySQL',
-    'Chart.js',
   ];
   
   export default function TechStack() {

@@ -6,18 +6,18 @@ export default function Hero() {
   return (
     <motion.section
       className="p-16 w-[70%] mx-auto"
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      <section className="flex items-center">
-        <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 px-6">
+      <section className="justify-center-safe">
+        <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 px-6">
           <div className="flex flex-col justify-left gap-6">
             <h1 className="text-4xl md:text-6xl font-bold text-white">
               Audric
               <span className="text-emerald-400">.</span>
               <br />
-              <span className="text-emerald-400">web developer</span>
+              <span className="text-emerald-400">web/mobile developer</span>
             </h1>
           </div>
           <div className="relative h-60 w-60 rounded-2xl overflow-hidden">
