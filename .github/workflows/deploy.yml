@@ -44,14 +44,15 @@ jobs:
           name: portfolio-build
           path: out
 
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.VPS_SSH_KEY }}
-
       - name: Deploy to PREPROD (Apache)
-        run: |
-          scp -r -o StrictHostKeyChecking=no out/* ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/portfolio-preprod/out
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "out/*"
+          target: "/var/www/portfolio-preprod/out"
+          strip_components: 1
 
   deploy-prod:
     needs: build
@@ -65,11 +66,12 @@ jobs:
           name: portfolio-build
           path: out
 
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.VPS_SSH_KEY }}
-
       - name: Deploy to PROD (Apache)
-        run: |
-          scp -r -o StrictHostKeyChecking=no out/* ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/portfolio/out
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "out/*"
+          target: "/var/www/portfolio/out"
+          strip_components: 1
