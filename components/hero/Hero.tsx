@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 px-6">
           <div className="flex flex-col justify-left gap-6">
             <h1 className="text-4xl md:text-6xl font-bold text-white">
-              Audric test
+              Audric
               <span className="text-emerald-400">.</span>
               <br />
               <span className="text-emerald-400">web/mobile developer</span>
