@@ -12,10 +12,9 @@ const projects: Project[] = [
     technologies: ["React Native", "TypeScript", "Expo", "Umami API"],
     github: "https://github.com/audricfullhardt",
     features: [
-      "Système de commande en temps réel",
-      "Paiement sécurisé intégré",
-      "Notifications push pour le suivi des commandes",
-      "Interface utilisateur moderne et responsive",
+      "Application mobile du site web CROUStillant",
+      "CROUStillant permet de consulter les menus des restaurants CROUS de France et d'outre-mer",
+      "Application disponible sur Android et iOS",
     ],
   },
   {
@@ -27,52 +26,47 @@ const projects: Project[] = [
     demo: "https://weather.audric-fullhardt.fr",
     features: [
       "Prévisions météo à 7 jours",
-      "Géolocalisation automatique",
       "Animations fluides et interactives",
-      "Mode sombre/clair",
+      "Recherche par ville dans le monde",
     ],
   },
   {
     id: "3",
     title: "ScaleTheme App",
     description:
-      "Outil de gestion de thèmes pour développeurs, permettant de créer, personnaliser et exporter des palettes de couleurs.",
+      "Application mobile permettant de recevoir des notifications à chaque nouvel abonnement",
     technologies: ["React Native", "Node.js", "Express"],
     github: "https://github.com/audricfullhardt",
     demo: "https://scaletheme.audric-fullhardt.fr",
     features: [
-      "Création de palettes personnalisées",
-      "Export en différents formats (CSS, JSON, Tailwind)",
-      "Prévisualisation en temps réel",
-      "Bibliothèque de thèmes prédéfinis",
+      "Application mobile permettant de recevoir des notifications à chaque nouvel abonnement",
+      "Utilisation d'un webhook en Node.js pour recevoir les notifications",
     ],
   },
   {
     id: "4",
     title: "ThreeJsJourney",
     description:
-      "Portfolio interactif en 3D utilisant Three.js pour créer des expériences immersives et des animations complexes.",
+      "Suivi du cours de Three.js de Bruno Simon, exploration des possibilités de Three.js",
     technologies: ["Three.js", "React Three Fiber", "GSAP", "WebGL"],
     demo: "https://threejs.audric-fullhardt.fr",
     features: [
       "Scènes 3D interactives",
       "Animations fluides avec physics",
       "Optimisation des performances",
-      "Support mobile et desktop",
     ],
   },
   {
     id: "5",
     title: "Odyssey42",
     description:
-      "Plateforme éducative gamifiée pour l'apprentissage du code, avec des défis progressifs et un système de récompenses.",
+      "Site réalisé en 3jours pour le Festival MMI 2025",
     technologies: ["Three.js", "JavaScript", "Blender"],
     github: "https://github.com/audricfullhardt",
     features: [
-      "Système de défis progressifs",
-      "Éditeur de code intégré",
-      "Système de points et badges",
-      "Tableau de classement en temps réel",
+      "Aventure en 3D avec un personnage principal",
+      "Voyage dans l'espace avec un vaisseau spatial",
+      "Interaction avec l'environnement",
     ],
   },
 ];
