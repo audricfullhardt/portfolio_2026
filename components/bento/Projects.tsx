@@ -1,110 +1,92 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Project } from "@/lib/types";
-
-const projects: Project[] = [
-  {
-    id: "1",
-    title: "Croustillant App",
-    description:
-      "Application mobile de commande en ligne pour une boulangerie. Interface intuitive avec système de panier, gestion des commandes et notifications push.",
-    technologies: ["React Native", "TypeScript", "Expo", "Umami API"],
-    github: "https://github.com/audricfullhardt",
-    features: [
-      "Système de commande en temps réel",
-      "Paiement sécurisé intégré",
-      "Notifications push pour le suivi des commandes",
-      "Interface utilisateur moderne et responsive",
-    ],
-  },
-  {
-    id: "2",
-    title: "Site météo",
-    description:
-      "Application web météorologique avec prévisions détaillées, visualisation de données et géolocalisation automatique.",
-    technologies: ["React.js", "TailwindCSS", "OpenWeather API", "Symfony"],
-    demo: "https://weather.audric-fullhardt.fr",
-    features: [
-      "Prévisions météo à 7 jours",
-      "Géolocalisation automatique",
-      "Animations fluides et interactives",
-      "Mode sombre/clair",
-    ],
-  },
-  {
-    id: "3",
-    title: "ScaleTheme App",
-    description:
-      "Outil de gestion de thèmes pour développeurs, permettant de créer, personnaliser et exporter des palettes de couleurs.",
-    technologies: ["React Native", "Node.js", "Express"],
-    github: "https://github.com/audricfullhardt",
-    demo: "https://scaletheme.audric-fullhardt.fr",
-    features: [
-      "Création de palettes personnalisées",
-      "Export en différents formats (CSS, JSON, Tailwind)",
-      "Prévisualisation en temps réel",
-      "Bibliothèque de thèmes prédéfinis",
-    ],
-  },
-  {
-    id: "4",
-    title: "ThreeJsJourney",
-    description:
-      "Portfolio interactif en 3D utilisant Three.js pour créer des expériences immersives et des animations complexes.",
-    technologies: ["Three.js", "React Three Fiber", "GSAP", "WebGL"],
-    demo: "https://threejs.audric-fullhardt.fr",
-    features: [
-      "Scènes 3D interactives",
-      "Animations fluides avec physics",
-      "Optimisation des performances",
-      "Support mobile et desktop",
-    ],
-  },
-  {
-    id: "5",
-    title: "Odyssey42",
-    description:
-      "Plateforme éducative gamifiée pour l'apprentissage du code, avec des défis progressifs et un système de récompenses.",
-    technologies: ["Three.js", "JavaScript", "Blender"],
-    github: "https://github.com/audricfullhardt",
-    features: [
-      "Système de défis progressifs",
-      "Éditeur de code intégré",
-      "Système de points et badges",
-      "Tableau de classement en temps réel",
-    ],
-  },
-];
+import { ExternalLink, Github } from "lucide-react";
+import projects from "../../public/projects/projects.json";
 
 interface ProjectsProps {
-  onProjectClick: (project: Project) => void;
+  onProjectClick: (project: any) => void;
 }
 
 export default function Projects({ onProjectClick }: ProjectsProps) {
   return (
-    <div className="mt-4 grid grid-cols-3 gap-4">
-      {projects.map((project, index) => (
-        <motion.div
-          key={project.id}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+    <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {projects.map((project: any, index: number) => (
+        <motion.article
+          key={project.id.toString()}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: index * 0.05, duration: 0.3 }}
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.99 }}
-          onClick={() => onProjectClick(project)}
-          className="group relative rounded-xl bg-white/5 border border-white/10 p-4 hover:border-emerald-400/40 transition-all cursor-pointer"
+          className="group relative rounded-xl bg-white/5 border border-white/10 hover:border-emerald-400/40 overflow-hidden transition-all"
         >
-          <h4 className="text-white font-medium relative z-10">{project.title}</h4>
-          <p className="text-white/50 text-sm mt-1 relative z-10">Voir le projet →</p>
+          <div className="relative h-40 bg-gradient-to-br from-emerald-400/20 via-emerald-500/10 to-transparent overflow-hidden">
+            {project.pictures ? (
+              <img
+                src={project.pictures[0]}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-6xl font-bold text-white/10">
+                  {project.title.charAt(0)}
+                </div>
+              </div>
+            )}
+          </div>
 
-          <motion.div
-            className="absolute inset-0 rounded-xl bg-emerald-400/10"
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
-            transition={{ duration: 0.2 }}
-          />
-        </motion.div>
+          <div className="p-4">
+            <h4 className="text-lg font-semibold text-white mb-2">
+              {project.title}
+            </h4>
+            <p className="text-white/60 text-sm leading-relaxed mb-4 line-clamp-3">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.technologies.slice(0, 3).map((tech: any) => (
+                <span
+                  key={tech}
+                  className="px-2.5 py-1 rounded-md bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-xs"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex gap-2">
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-emerald-400/20 border border-emerald-400/40 hover:bg-emerald-400/30 text-emerald-400 text-sm font-medium transition-colors"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Démo
+                </a>
+              )}
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 text-white/80 text-sm font-medium transition-colors"
+                >
+                  <Github className="w-4 h-4" />
+                </a>
+              )}
+              <button
+                onClick={() => onProjectClick(project)}
+                className="flex items-center justify-center px-3 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 text-white/60 hover:text-white/80 text-sm transition-colors"
+              >
+                Détails
+              </button>
+            </div>
+          </div>
+        </motion.article>
       ))}
     </div>
   );

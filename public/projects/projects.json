@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "CROUStillant App",
+        "description": "Application mobile pour consulter les menus des restaurants CROUS de France et d'outre-mer. Disponible sur Android et iOS.",
+        "technologies": ["React Native", "TypeScript", "Expo"],
+        "github": "https://github.com/audricfullhardt",
+        "pictures": ["/projects/croustillant/1.webp", "/projects/croustillant/2.webp", "/projects/croustillant/3.webp"]
+    },
+    {
+        "id": 2,
+        "title": "Weather App",
+        "description": "Application web de météo avec prévisions à 7 jours, recherche par ville mondiale et géolocalisation automatique.",
+        "technologies": ["React.js", "TailwindCSS", "OpenWeather API"],
+        "pictures": ["/projects/weather/1.webp"],
+        "demo": "https://sae401.audric-fullhardt.fr"
+    },
+    {
+        "id": 3,
+        "title": "ScaleTheme App",
+        "description": "Application mobile de notifications en temps réel pour les nouveaux abonnements via webhook Node.js.",
+        "technologies": ["React Native", "Node.js", "Express"],
+        "github": "https://github.com/audricfullhardt"
+    },
+    {
+        "id": 4,
+        "title": "ThreeJsJourney",
+        "description": "Exploration des possibilités de Three.js : scènes 3D interactives avec physics et optimisation des performances.",
+        "technologies": ["Three.js", "React Three Fiber", "WebGL"],
+        "pictures": ["/projects/threejs/1.webp", "/projects/threejs/2.webp", "/projects/threejs/3.webp"],
+        "demo": "https://threejs.audric-fullhardt.fr"
+    },
+    {
+        "id": 5,
+        "title": "Odyssey42",
+        "description": "Aventure 3D spatiale réalisée en 3 jours pour le Festival MMI 2025. Personnage principal et interactions avec l'environnement.",
+        "technologies": ["Three.js", "JavaScript", "Blender"],
+        "github": "https://github.com/audricfullhardt",
+        "pictures": ["/projects/odyssey42/1.webp", "/projects/odyssey42/2.webp", "/projects/odyssey42/3.webp"],
+        "demo": "https://festival-mmi-2025.vercel.app/"
+    },
+    {
+        "id": 6,
+        "title": "Jeu de tir en VR",
+        "description": "Jeu de tir en VR réalisé avec Unity.",
+        "technologies": ["Unity", "C#", "VR"],
+        "github": "https://github.com/audricfullhardt/shooter_vr",
+        "pictures": ["/projects/vr/1.webp", "/projects/vr/2.webp", "/projects/vr/3.webp"]
+    }
+]

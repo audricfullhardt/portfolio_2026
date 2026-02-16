@@ -1,0 +1,77 @@
+name: CI/CD Portfolio Preprod & Prod
+
+on:
+  push:
+    branches:
+      - main
+      - preprod
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-build
+          path: out
+
+  deploy-preprod:
+    needs: build
+    if: github.ref == 'refs/heads/preprod'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: portfolio-build
+          path: out
+
+      - name: Deploy to PREPROD (Apache)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: deploy
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "out/*"
+          target: "/var/www/portfolio-preprod/out"
+          strip_components: 1
+
+  deploy-prod:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: portfolio-build
+          path: out
+
+      - name: Deploy to PROD (Apache)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: deploy
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "out/*"
+          target: "/var/www/portfolio/out"
+          strip_components: 1

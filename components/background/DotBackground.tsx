@@ -11,8 +11,6 @@ export default function DotBackground() {
         baseColor="#071212"
         activeColor="#11552E"
         proximity={120}
-        shockRadius={80}
-        shockStrength={10}
         style={{ width: '100%', height: '100%' }}
       />
       <div
