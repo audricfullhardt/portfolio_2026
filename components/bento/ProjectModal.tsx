@@ -3,10 +3,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useEffect } from "react";
-import { Project } from "@/lib/types";
 
 interface ProjectModalProps {
-  project: Project | null;
+  project: any | null;
   onClose: () => void;
 }
 
@@ -34,7 +33,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     <AnimatePresence>
       {project && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -43,7 +41,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             className="fixed inset-0 bg-black/80 backdrop-blur-md z-50"
           />
 
-          {/* Modal */}
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
             <motion.div
               initial={{ opacity: 0 }}
@@ -53,7 +50,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-zinc-900/95 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl shadow-2xl pointer-events-auto"
             >
-              {/* Close Button */}
               <button
                 onClick={onClose}
                 className="absolute top-6 right-6 z-10 p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-400/40 transition"
@@ -61,9 +57,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 <X className="w-5 h-5 text-white" />
               </button>
 
-              {/* Content */}
               <div className="p-6 sm:p-8">
-                {/* Header */}
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
                     {project.title}
@@ -73,24 +67,51 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   </p>
                 </div>
 
-                {/* Image */}
-                {project.image && (
+                {project.pictures && project.pictures.length > 0 && (
+                  <div className="mt-6 space-y-4">
+                    {project.pictures.length > 1 ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {project.pictures.map((picture: any, index: number) => (
+                          <div
+                            key={index}
+                            className="rounded-2xl overflow-hidden border border-white/10 hover:border-emerald-400/40 transition-all"
+                          >
+                            <img
+                              src={picture}
+                              alt={`${project.title} - Image ${index + 1}`}
+                              className="w-full h-64 object-cover aspect-ratio-16/9"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="rounded-2xl overflow-hidden border border-white/10">
+                        <img
+                          src={project.pictures[0]}
+                          alt={project.title}
+                          className="w-full h-64 object-cover"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}
+                
+                {!project.pictures && project.image && (
                   <div className="mt-6 rounded-2xl overflow-hidden border border-white/10">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-64 object-cover"
+                      className="w-full h-64 object-cover aspect-ratio-16/9"
                     />
                   </div>
                 )}
 
-                {/* Technologies */}
                 <div className="mt-6">
                   <h3 className="text-xl font-semibold text-white mb-3">
                     Technologies
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.map((tech: any) => (
                       <span
                         key={tech}
                         className="px-4 py-2 rounded-full bg-emerald-400/10 border border-emerald-400/30 text-emerald-400 text-sm font-medium"
@@ -101,14 +122,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   </div>
                 </div>
 
-                {/* Features */}
                 {project.features && project.features.length > 0 && (
                   <div className="mt-6">
                     <h3 className="text-xl font-semibold text-white mb-3">
                       Fonctionnalités
                     </h3>
                     <ul className="space-y-2">
-                      {project.features.map((feature, index) => (
+                      {project.features.map((feature: any, index: number) => (
                         <li
                           key={index}
                           className="flex items-start gap-3 text-white/70"
@@ -121,7 +141,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   </div>
                 )}
 
-                {/* Links */}
                 <div className="mt-8 flex flex-col sm:flex-row gap-3">
                   {project.demo && (
                     <a
@@ -146,7 +165,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </div>
               </div>
 
-              {/* Decorative gradient */}
               <div className="absolute inset-0 -z-10 rounded-3xl bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_50%)] pointer-events-none" />
             </motion.div>
           </div>

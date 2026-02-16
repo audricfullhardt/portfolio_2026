@@ -6,7 +6,7 @@ import { Mail, Github, Linkedin } from "lucide-react";
 export default function Hero() {
   return (
     <motion.section
-      className="max-w-7xl mx-auto px-6 py-16 md:py-24"
+      className="max-w-7xl mx-auto px-6 py-8 md:py-12"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
@@ -33,7 +33,6 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Badge de disponibilité */}
             <motion.div
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-xl w-fit"
               initial={{ opacity: 0, y: 10 }}

@@ -12,7 +12,7 @@ interface BentoGridProps {
 export default function BentoGrid({ onProjectClick }: BentoGridProps) {
   return (
     <motion.div
-      className="max-w-7xl mx-auto px-6 mb-16"
+      className="max-w-7xl mx-auto px-6"
       initial="hidden"
       animate="visible"
       variants={{
