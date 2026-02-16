@@ -68,28 +68,28 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </div>
 
                 {project.pictures && project.pictures.length > 0 && (
-                  <div className="mt-6 space-y-4">
+                  <div className="mt-8 space-y-4">
                     {project.pictures.length > 1 ? (
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {project.pictures.map((picture: any, index: number) => (
                           <div
                             key={index}
-                            className="rounded-2xl overflow-hidden border border-white/10 hover:border-emerald-400/40 transition-all"
+                            className="rounded-2xl overflow-hidden border border-white/10 hover:border-emerald-400/40 transition-all bg-black/20 h-48"
                           >
                             <img
                               src={picture}
                               alt={`${project.title} - Image ${index + 1}`}
-                              className="w-full h-64 object-cover aspect-ratio-16/9"
+                              className="w-full h-full object-cover"
                             />
                           </div>
                         ))}
                       </div>
                     ) : (
-                      <div className="rounded-2xl overflow-hidden border border-white/10">
+                      <div className="rounded-2xl overflow-hidden border border-white/10 bg-black/20 h-64">
                         <img
                           src={project.pictures[0]}
                           alt={project.title}
-                          className="w-full h-64 object-cover"
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     )}
@@ -97,11 +97,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 )}
                 
                 {!project.pictures && project.image && (
-                  <div className="mt-6 rounded-2xl overflow-hidden border border-white/10">
+                  <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 bg-black/20 h-64">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-64 object-cover aspect-ratio-16/9"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 )}
