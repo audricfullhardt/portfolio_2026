@@ -43,6 +43,7 @@
         "title": "Jeu de tir en VR",
         "description": "Prototype de jeu de tir en réalité virtuelle développé sous Unity, intégrant déplacements VR, interactions utilisateur et logique de gameplay en C#.",
         "technologies": ["Unity", "C#", "VR"],
-        "github": "https://github.com/audricfullhardt/shooter_vr"
+        "github": "https://github.com/audricfullhardt/shooter_vr",
+        "demo": "https://wra507d.mariusnogueron.fr/"
     }
 ]
