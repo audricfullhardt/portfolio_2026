@@ -1,26 +1,32 @@
 "use client";
 
 import { useState } from "react";
+import { LangProvider, LangSwitch } from "@/lib/LangContext";
+import GridBackground from "@/components/background/GridBackground";
 import Hero from "@/components/hero/Hero";
-import BentoGrid from "@/components/bento/BentoGrid";
-import DotBackground from "@/components/background/DotBackground";
-import ProjectModal from "@/components/bento/ProjectModal";
+import About from "@/components/sections/About";
+import Stack from "@/components/sections/Stack";
+import Timeline from "@/components/sections/Timeline";
+import CTA from "@/components/sections/CTA";
+import Footer from "@/components/footer/Footer";
+import ProjectsList from "@/components/projects/ProjectsList";
+import ProjectModal from "@/components/projects/ProjectModal";
 import { Project } from "@/lib/types";
-import Footer from "@/components/footer/footer";
 
 export default function Home() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
+  const [project, setProject] = useState<Project | null>(null);
   return (
-    <>
+    <LangProvider>
+      <GridBackground />
+      <LangSwitch />
       <Hero />
-      <BentoGrid onProjectClick={setSelectedProject} />
-      <DotBackground />
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
+      <About />
+      <Stack />
+      <ProjectsList onOpen={setProject} />
+      <Timeline />
+      <CTA />
       <Footer />
-    </>
+      <ProjectModal project={project} onClose={() => setProject(null)} />
+    </LangProvider>
   );
 }

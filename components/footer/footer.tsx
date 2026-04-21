@@ -1,25 +1,19 @@
+/* components/footer/Footer.tsx */
 "use client";
-
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { useLang } from "@/lib/LangContext";
 
 export default function Footer() {
-    return (
-        <footer className="text-white">
-            <div className="max-w-7xl mx-auto px-6 py-8">
-                <div className="p-6 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10">
-
-                    <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6" />
-
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                        <p className="text-sm text-white/50 text-center sm:text-left">
-                            &copy; {new Date().getFullYear()} Audric Fullhardt. Tous droits réservés.
-                        </p>
-                        <p className="flex items-center gap-2 text-sm text-white/50">
-                            Fait avec <Heart className="w-4 h-4 text-emerald-400 fill-emerald-400" /> et Next.js
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    )
+  const { t } = useLang();
+  return (
+    <footer className="container-x" style={{ paddingTop: 32, paddingBottom: 40 }}>
+      <div className="flex justify-between items-center flex-wrap gap-3" style={{ padding: "20px 0", borderTop: "1px solid var(--border)" }}>
+        <div className="mono" style={{ fontSize: 12, color: "var(--subtle)" }}>
+          © {new Date().getFullYear()} Audric Fullhardt. {t.rights}
+        </div>
+        <div className="mono flex items-center gap-1.5" style={{ fontSize: 12, color: "var(--subtle)" }}>
+          {t.madeWith} <span style={{ color: "var(--accent)" }}>●</span> {t.and} Next.js
+        </div>
+      </div>
+    </footer>
+  );
 }
