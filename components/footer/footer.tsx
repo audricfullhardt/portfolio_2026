@@ -1,4 +1,3 @@
-/* components/footer/Footer.tsx */
 "use client";
 import { useLang } from "@/lib/LangContext";
 
