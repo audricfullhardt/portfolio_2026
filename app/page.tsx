@@ -11,7 +11,7 @@ import CTA from "@/components/sections/CTA";
 import ProjectsList from "@/components/projects/ProjectsList";
 import ProjectModal from "@/components/projects/ProjectModal";
 import { Project } from "@/lib/types";
-import Footer from "@/components/footer/Footer";
+import Footer from "../components/footer/Footer";
 
 export default function Home() {
   const [project, setProject] = useState<Project | null>(null);
