@@ -8,10 +8,10 @@ import About from "@/components/sections/About";
 import Stack from "@/components/sections/Stack";
 import Timeline from "@/components/sections/Timeline";
 import CTA from "@/components/sections/CTA";
-import Footer from "@/components/footer/Footer";
 import ProjectsList from "@/components/projects/ProjectsList";
 import ProjectModal from "@/components/projects/ProjectModal";
 import { Project } from "@/lib/types";
+import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   const [project, setProject] = useState<Project | null>(null);
