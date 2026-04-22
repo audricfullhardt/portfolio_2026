@@ -141,9 +141,10 @@ export const STACK = [
 
 export const TIMELINE: { fr: TimelineItem[]; en: TimelineItem[] } = {
   fr: [
-    { year: "2026", title: "Recherche d'alternance", body: "Développeur web/mobile disponible septembre 2026. Freelance en parallèle.", current: true, tag: "MAINTENANT" },
-    { year: "2025", title: "BUT MMI 2e année", body: "Métiers du Multimédia et de l'Internet. Spécialisation développement web/mobile et 3D.", tag: "ÉTUDES" },
-    { year: "2025", title: "Festival MMI Odyssey42", body: "Game jam 72h, équipe 4 dev. Livré un jeu 3D jouable et présenté sur scène.", tag: "PROJET" },
+    { year: "2026", title: "Recherche d'alternance", body: "Développeur web/mobile disponible septembre 2026 pendant 3 ans. Freelance en parallèle.", current: true, tag: "MAINTENANT" },
+    { year: "2026", title: "EPITA", body: "Entrée en cycle ingénieur pour 3 ans en alternance", tag: "APRÈS" },
+    { year: "2025", title: "BUT MMI 3e année", body: "Métiers du Multimédia et de l'Internet. Spécialisation développement web et dispositifs interactifs", tag: "ÉTUDES" },
+    { year: "2025", title: "Festival MMI Odyssey42", body: "Festival MMI en 72h, équipe de 3 dev sur le projet. Livré en temps et en heure en Three.js", tag: "PROJET" },
     { year: "2024", title: "Publication CROUStillant", body: "Mise en production sur App Store et Play Store. App cross-platform live pour des milliers d'étudiants.", tag: "LIVRAISON" },
     { year: "2023", title: "Début du freelance", body: "Premières missions web sites, dashboards, intégrations. Cadre léger, exigence haute.", tag: "FREELANCE" },
   ],
