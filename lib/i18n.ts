@@ -74,4 +74,4 @@ export const I18N = {
   },
 } as const;
 
-export type Dict = (typeof I18N)["fr"];
+export type Dict = (typeof I18N)[Lang];
