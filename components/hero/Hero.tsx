@@ -1,143 +1,93 @@
 "use client";
-
-import { motion } from "framer-motion";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { useState } from "react";
+import { useLang } from "@/lib/LangContext";
+import { Icon } from "@/components/ui/Primitives";
 
 export default function Hero() {
+  const { t } = useLang();
+  const [copied, setCopied] = useState(false);
+  const email = "contact@audric-fullhardt.fr";
+  const copy = () => {
+    navigator.clipboard?.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
   return (
-    <motion.section
-      className="max-w-7xl mx-auto px-6 py-8 md:py-12"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-    >
-      <div className="flex flex-col lg:flex-row items-start gap-8 md:gap-12">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 flex-1">
-          <div className="relative h-48 w-48 md:h-56 md:w-56 rounded-2xl overflow-hidden shrink-0">
-            <div className="absolute inset-0 opacity-90 bg-white/10 backdrop-blur-xl border border-white/20" />
-            <img
-              src="/avatar2.png"
-              alt="Audric Fullhardt"
-              className="relative z-10 w-full h-full object-cover scale-105"
-            />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.25),transparent_60%)] opacity-60" />
+    <section className="container-x pt-14 pb-10 sm:pt-16 sm:pb-12 lg:pt-20 lg:pb-14">
+      <div className="mono flex items-center gap-2 mb-6" style={{ fontSize: 11, color: "var(--subtle)" }}>
+        <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--accent)", boxShadow: "0 0 10px var(--accent)" }} />
+        <span>~/audric-fullhardt</span>
+        <span style={{ opacity: 0.4 }}>— {new Date().getFullYear()}</span>
+      </div>
+      <div className="grid gap-7 items-start grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px]">
+        <div className="flex gap-5 sm:gap-7 items-center flex-wrap">
+          <div
+            className="shimmer-border relative flex-shrink-0 w-24 h-24 sm:w-36 sm:h-36 lg:w-[168px] lg:h-[168px]"
+            style={{ borderRadius: 20, overflow: "hidden", border: "1px solid var(--border-strong)", background: "linear-gradient(135deg, oklch(0.22 0 0), oklch(0.16 0 0))" }}
+          >
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 30% 20%, oklch(0.78 0.17 162 / 0.15), transparent 60%)" }} />
+            <img src="/avatar2.png" alt="Audric Fullhardt" style={{ position: "relative", zIndex: 1, width: "100%", height: "100%", objectFit: "cover" }} />
           </div>
-          <div className="flex-1 flex flex-col gap-6">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                Audric
-                <span className="text-emerald-400">.</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-emerald-400 font-medium mt-2">
-                Développeur web & mobile
-              </p>
-            </div>
-
-            <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-xl w-fit"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <div className="relative flex items-center justify-center">
-                <motion.div
-                  className="w-2.5 h-2.5 rounded-full bg-emerald-400"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [1, 0.8, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-                <motion.div
-                  className="absolute w-2.5 h-2.5 rounded-full bg-emerald-400"
-                  animate={{
-                    scale: [1, 1.8, 1],
-                    opacity: [0.6, 0, 0.6],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
+          <div className="flex-1" style={{ minWidth: 0 }}>
+            <h1 style={{ fontSize: "clamp(36px, 8vw, 88px)", fontWeight: 600, margin: 0, letterSpacing: "-0.035em", lineHeight: 0.95 }}>
+              Audric<span style={{ color: "var(--accent)" }}>.</span>
+            </h1>
+            <p style={{ fontSize: "clamp(15px, 2vw, 22px)", color: "var(--accent)", margin: "10px 0 0 0", fontWeight: 500 }}>{t.role}</p>
+            <div className="flex gap-2 flex-wrap mt-4">
+              <div className="inline-flex items-center gap-2.5" style={{ padding: "8px 14px", borderRadius: 999, background: "var(--accent-soft)", border: "1px solid var(--accent-ring)" }}>
+                <span style={{ position: "relative", display: "inline-flex", width: 9, height: 9 }}>
+                  <span style={{ position: "absolute", inset: 0, borderRadius: "50%", background: "var(--accent)", animation: "pulse-ring 2s ease-in-out infinite" }} />
+                  <span style={{ position: "absolute", inset: 0, borderRadius: "50%", background: "var(--accent)" }} />
+                </span>
+                <span className="mono" style={{ fontSize: 12, color: "var(--accent)" }}>{t.available}</span>
               </div>
-              <span className="text-sm font-medium text-emerald-400">
-                Disponible pour des projets
-              </span>
-            </motion.div>
+              <div className="mono inline-flex items-center gap-2" style={{ padding: "8px 14px", borderRadius: 999, background: "oklch(1 0 0 / 0.04)", border: "1px solid var(--border)", fontSize: 12, color: "var(--muted)" }}>
+                <Icon.Dot width="8" height="8" style={{ color: "var(--accent-2)" }} />
+                France · FR / EN
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Section Contact améliorée */}
-        <motion.div
-          className="w-full lg:w-auto lg:min-w-[260px] p-4 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <h2 className="text-base font-semibold text-white mb-3">
-            Me contacter
-          </h2>
-          <div className="flex flex-col gap-2">
-            <a
-              href="mailto:contact@audric-fullhardt.fr"
-              className="group flex items-center gap-2.5 p-2 rounded-lg hover:bg-white/5 transition-all duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-colors">
-                <Mail className="w-4 h-4 text-emerald-400" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="text-sm font-medium text-white group-hover:text-emerald-400 transition-colors">
-                  E-mail
-                </div>
-                <div className="text-xs text-white/50 truncate">
-                  contact@audric-fullhardt.fr
-                </div>
-              </div>
-            </a>
-
-            <a
-              href="https://github.com/audricfullhardt"
-              className="group flex items-center gap-2.5 p-2 rounded-lg hover:bg-white/5 transition-all duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 border border-white/10 group-hover:bg-white/10 transition-colors">
-                <Github className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="text-sm font-medium text-white group-hover:text-emerald-400 transition-colors">
-                  GitHub
-                </div>
-                <div className="text-xs text-white/50 truncate">@audricfullhardt</div>
-              </div>
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/audric-fullhardt/"
-              className="group flex items-center gap-2.5 p-2 rounded-lg hover:bg-white/5 transition-all duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 group-hover:bg-blue-500/20 transition-colors">
-                <Linkedin className="w-4 h-4 text-blue-400" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="text-sm font-medium text-white group-hover:text-emerald-400 transition-colors">
-                  LinkedIn
-                </div>
-                <div className="text-xs text-white/50 truncate">Audric Fullhardt</div>
-              </div>
-            </a>
+        <div className="card" style={{ padding: 16 }}>
+          <div className="flex justify-between items-center mb-3">
+            <h3 style={{ fontSize: 14, fontWeight: 600, margin: 0 }}>{t.contactMe}</h3>
+            <span className="mono" style={{ fontSize: 10, color: "var(--subtle)" }}>/03</span>
           </div>
-        </motion.div>
+          <div className="flex flex-col gap-1">
+            <ContactRow icon="Mail" label="E-mail" sub={email} onClick={copy} copied={copied} primary tCopy={t.copyEmail} tCopied={t.copied} />
+            <ContactRow icon="Github" label="GitHub" sub="@audricfullhardt" href="https://github.com/audricfullhardt" />
+            <ContactRow icon="Linkedin" label="LinkedIn" sub="Audric Fullhardt" href="https://www.linkedin.com/in/audric-fullhardt/" accent2 />
+          </div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
+}
+
+function ContactRow({ icon, label, sub, href, onClick, copied, primary, accent2, tCopy, tCopied }: {
+  icon: keyof typeof Icon; label: string; sub: string; href?: string;
+  onClick?: () => void; copied?: boolean; primary?: boolean; accent2?: boolean;
+  tCopy?: string; tCopied?: string;
+}) {
+  const I = Icon[icon];
+  const baseStyle: React.CSSProperties = { display: "flex", alignItems: "center", gap: 10, padding: 8, borderRadius: 8, textDecoration: "none", color: "inherit", cursor: "pointer", transition: "background 0.2s" };
+  const content = (
+    <>
+      <div style={{ width: 34, height: 34, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", background: primary ? "var(--accent-soft)" : accent2 ? "var(--accent-2-soft)" : "oklch(1 0 0 / 0.05)", border: `1px solid ${primary ? "var(--accent-ring)" : accent2 ? "var(--accent-2-ring)" : "var(--border)"}`, color: primary ? "var(--accent)" : accent2 ? "var(--accent-2)" : "var(--muted)", flexShrink: 0 }}>
+        <I width="15" height="15" />
+      </div>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ fontSize: 13, fontWeight: 500 }}>{label}</div>
+        <div className="mono" style={{ fontSize: 11, color: "var(--subtle)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{sub}</div>
+      </div>
+      {onClick && (
+        <span className="mono" style={{ fontSize: 10, padding: "3px 7px", borderRadius: 6, color: copied ? "var(--accent)" : "var(--subtle)", border: `1px solid ${copied ? "var(--accent-ring)" : "var(--border)"}`, transition: "all 0.2s" }}>
+          {copied ? tCopied : tCopy}
+        </span>
+      )}
+    </>
+  );
+  if (href) return <a href={href} target="_blank" rel="noopener noreferrer" style={baseStyle}>{content}</a>;
+  return <div style={baseStyle} onClick={onClick}>{content}</div>;
 }
