@@ -14,24 +14,27 @@ export default function Hero() {
     setTimeout(() => setCopied(false), 1500);
   };
   return (
-    <section className="container-x" style={{ paddingTop: 80, paddingBottom: 56 }}>
+    <section className="container-x pt-14 pb-10 sm:pt-16 sm:pb-12 lg:pt-20 lg:pb-14">
       <div className="mono flex items-center gap-2 mb-6" style={{ fontSize: 11, color: "var(--subtle)" }}>
         <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--accent)", boxShadow: "0 0 10px var(--accent)" }} />
         <span>~/audric-fullhardt</span>
         <span style={{ opacity: 0.4 }}>— {new Date().getFullYear()}</span>
       </div>
-      <div className="grid gap-7 items-start" style={{ gridTemplateColumns: "minmax(0,1fr) 300px" }}>
-        <div className="flex gap-7 items-center flex-wrap">
-          <div className="shimmer-border relative flex-shrink-0" style={{ width: 168, height: 168, borderRadius: 24, overflow: "hidden", border: "1px solid var(--border-strong)", background: "linear-gradient(135deg, oklch(0.22 0 0), oklch(0.16 0 0))" }}>
+      <div className="grid gap-7 items-start grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px]">
+        <div className="flex gap-5 sm:gap-7 items-center flex-wrap">
+          <div
+            className="shimmer-border relative flex-shrink-0 w-24 h-24 sm:w-36 sm:h-36 lg:w-[168px] lg:h-[168px]"
+            style={{ borderRadius: 20, overflow: "hidden", border: "1px solid var(--border-strong)", background: "linear-gradient(135deg, oklch(0.22 0 0), oklch(0.16 0 0))" }}
+          >
             <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 30% 20%, oklch(0.78 0.17 162 / 0.15), transparent 60%)" }} />
             <img src="/avatar2.png" alt="Audric Fullhardt" style={{ position: "relative", zIndex: 1, width: "100%", height: "100%", objectFit: "cover" }} />
           </div>
-          <div className="flex-1" style={{ minWidth: 260 }}>
-            <h1 style={{ fontSize: "clamp(48px, 7vw, 88px)", fontWeight: 600, margin: 0, letterSpacing: "-0.035em", lineHeight: 0.95 }}>
+          <div className="flex-1" style={{ minWidth: 0 }}>
+            <h1 style={{ fontSize: "clamp(36px, 8vw, 88px)", fontWeight: 600, margin: 0, letterSpacing: "-0.035em", lineHeight: 0.95 }}>
               Audric<span style={{ color: "var(--accent)" }}>.</span>
             </h1>
-            <p style={{ fontSize: "clamp(18px, 2vw, 22px)", color: "var(--accent)", margin: "10px 0 0 0", fontWeight: 500 }}>{t.role}</p>
-            <div className="flex gap-2.5 flex-wrap mt-4">
+            <p style={{ fontSize: "clamp(15px, 2vw, 22px)", color: "var(--accent)", margin: "10px 0 0 0", fontWeight: 500 }}>{t.role}</p>
+            <div className="flex gap-2 flex-wrap mt-4">
               <div className="inline-flex items-center gap-2.5" style={{ padding: "8px 14px", borderRadius: 999, background: "var(--accent-soft)", border: "1px solid var(--accent-ring)" }}>
                 <span style={{ position: "relative", display: "inline-flex", width: 9, height: 9 }}>
                   <span style={{ position: "absolute", inset: 0, borderRadius: "50%", background: "var(--accent)", animation: "pulse-ring 2s ease-in-out infinite" }} />
