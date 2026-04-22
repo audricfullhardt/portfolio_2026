@@ -4,7 +4,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Base conservée */
   --bg: oklch(0.145 0 0);
   --bg-raised: oklch(0.18 0 0);
   --fg: oklch(0.985 0 0);
@@ -13,13 +12,12 @@
   --border: oklch(1 0 0 / 10%);
   --border-strong: oklch(1 0 0 / 20%);
   --card: oklch(0.18 0 0);
+  --dots: grey;
 
-  /* Accent principal emerald — conservé */
   --accent: oklch(0.78 0.17 162);
   --accent-soft: oklch(0.78 0.17 162 / 0.12);
   --accent-ring: oklch(0.78 0.17 162 / 0.35);
 
-  /* Accent secondaire — VIOLET */
   --accent-2: oklch(0.72 0.17 295);
   --accent-2-soft: oklch(0.72 0.17 295 / 0.12);
   --accent-2-ring: oklch(0.72 0.17 295 / 0.3);
@@ -47,7 +45,6 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::selection { background: var(--accent-soft); color: var(--accent); }
 
-/* Noise overlay */
 .noise::before {
   content: "";
   position: fixed; inset: 0; pointer-events: none;
@@ -66,7 +63,7 @@ body {
   transition: background 0.2s ease-out;
 }
 
-.container-x { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+.container-x { max-width: 1200px; margin: 0 auto; padding: 10px 24px 0px 24px; position: relative; z-index: 2; }
 @media (max-width: 640px) { .container-x { padding: 0 16px; } }
 
 .card {

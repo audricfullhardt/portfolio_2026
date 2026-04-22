@@ -1,4 +1,3 @@
-/* lib/i18n.ts */
 export type Lang = "fr" | "en";
 
 export const I18N = {
@@ -15,7 +14,7 @@ export const I18N = {
     statsCoffee: "litres de café",
     stackKicker: "Stack",
     stackTitle: "Les outils avec lesquels je travaille.",
-    stackNote: "Survolez les tags répondent à votre curseur.",
+    stackNote: "Du frontend au backend, du mobile à la 3D.",
     projectsKicker: "Projets",
     projectsTitle: "Une sélection de ce que j'ai construit.",
     projectsNote: "Du mobile cross-platform au WebGL. Cliquez pour les détails.",
@@ -50,7 +49,7 @@ export const I18N = {
     statsCoffee: "litres of coffee",
     stackKicker: "Stack",
     stackTitle: "The tools I reach for.",
-    stackNote: "Hover the tags follow your cursor.",
+    stackNote: "From front-end to back-end, from mobile to 3D.",
     projectsKicker: "Projects",
     projectsTitle: "A selection of what I've built.",
     projectsNote: "From cross-platform mobile to WebGL. Click for details.",

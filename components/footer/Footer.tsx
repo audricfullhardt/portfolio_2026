@@ -1,5 +1,6 @@
 "use client";
 import { useLang } from "@/lib/LangContext";
+import { Heart } from "lucide-react";
 
 export default function Footer() {
   const { t } = useLang();
@@ -10,7 +11,7 @@ export default function Footer() {
           © {new Date().getFullYear()} Audric Fullhardt. {t.rights}
         </div>
         <div className="mono flex items-center gap-1.5" style={{ fontSize: 12, color: "var(--subtle)" }}>
-          {t.madeWith} <span style={{ color: "var(--accent)" }}>●</span> {t.and} Next.js
+          {t.madeWith} <Heart className="w-4 h-4 text-emerald-400 fill-emerald-400" /> {t.and} Next.js
         </div>
       </div>
     </footer>

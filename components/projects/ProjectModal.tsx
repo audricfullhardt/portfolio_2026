@@ -1,4 +1,3 @@
-/* components/projects/ProjectModal.tsx */
 "use client";
 import { useEffect } from "react";
 import { Project } from "@/lib/types";

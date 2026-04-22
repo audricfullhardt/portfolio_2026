@@ -1,5 +1,3 @@
-/* components/projects/ProjectsList.tsx
-   Layout LISTE — un projet par rangée, effet éditorial */
 "use client";
 import { useState } from "react";
 import { Project } from "@/lib/types";

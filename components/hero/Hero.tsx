@@ -1,4 +1,3 @@
-/* components/hero/Hero.tsx */
 "use client";
 import { useState } from "react";
 import { useLang } from "@/lib/LangContext";

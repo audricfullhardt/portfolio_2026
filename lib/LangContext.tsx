@@ -1,4 +1,3 @@
-/* lib/LangContext.tsx */
 "use client";
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { I18N, Lang, Dict } from "./i18n";

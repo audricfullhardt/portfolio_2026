@@ -1,4 +1,3 @@
-/* lib/data.ts */
 import { Project, TimelineItem } from "./types";
 
 export const PROJECTS: Project[] = [
@@ -67,7 +66,7 @@ export const PROJECTS: Project[] = [
       en: "Deep dive into Three.js: interactive 3D scenes, physics, performance tuning and real-time WebGL rendering.",
     },
     technologies: ["Three.js", "React Three Fiber", "WebGL"],
-    demo: "https://threejs.audric-fullhardt.fr",
+    // demo: "https://threejs.audric-fullhardt.fr",
     category: "3D / WebGL",
     year: "2025",
     features: {
@@ -144,15 +143,20 @@ export const TIMELINE: { fr: TimelineItem[]; en: TimelineItem[] } = {
     { year: "2026", title: "Recherche d'alternance", body: "Développeur web/mobile disponible septembre 2026 pendant 3 ans. Freelance en parallèle.", current: true, tag: "MAINTENANT" },
     { year: "2026", title: "EPITA", body: "Entrée en cycle ingénieur pour 3 ans en alternance", tag: "APRÈS" },
     { year: "2025", title: "BUT MMI 3e année", body: "Métiers du Multimédia et de l'Internet. Spécialisation développement web et dispositifs interactifs", tag: "ÉTUDES" },
+    { year: "2025", title: "1er Vice-Président Campus 3", body: "1er Vice-Président de la Fédération des Étudiants Troyens", tag: "ASSOCIATIF" },
     { year: "2025", title: "Festival MMI Odyssey42", body: "Festival MMI en 72h, équipe de 3 dev sur le projet. Livré en temps et en heure en Three.js", tag: "PROJET" },
-    { year: "2024", title: "Publication CROUStillant", body: "Mise en production sur App Store et Play Store. App cross-platform live pour des milliers d'étudiants.", tag: "LIVRAISON" },
-    { year: "2023", title: "Début du freelance", body: "Premières missions web sites, dashboards, intégrations. Cadre léger, exigence haute.", tag: "FREELANCE" },
+    { year: "2025", title: "Publication CROUStillant", body: "Mise en production sur App Store et Play Store. App cross-platform live pour des milliers d'étudiants.", tag: "LIVRAISON" },
+    { year: "2025", title: "Début du freelance", body: "Premières missions web sites, applications, intégrations. Cadre léger, exigence haute.", tag: "FREELANCE" },
+    { year: "2024", title: "Vice-Président et Trésorier BDE MMI", body: "Vice-Président et Trésorier du Bureau Des Étudiant MMI de l'IUT de Troyes", tag: "ASSOCIATIF" },
   ],
   en: [
     { year: "2026", title: "Looking for an apprenticeship", body: "Web/mobile developer available September 2026. Freelance in parallel.", current: true, tag: "NOW" },
-    { year: "2025", title: "BUT MMI Year 2", body: "Multimedia & Internet program. Focused on web/mobile dev and 3D.", tag: "STUDIES" },
-    { year: "2025", title: "MMI Festival Odyssey42", body: "72h game jam, team of 4 devs. Shipped a playable 3D game, presented on stage.", tag: "PROJECT" },
-    { year: "2024", title: "CROUStillant published", body: "Shipped to App Store and Play Store. Live cross-platform app for thousands of students.", tag: "SHIPPED" },
-    { year: "2023", title: "Freelance started", body: "First client work sites, dashboards, integrations. Lean delivery, high bar.", tag: "FREELANCE" },
+    { year: "2026", title: "EPITA", body: "Starting a 3-year work-study engineering cycle", tag: "AFTER" },
+    { year: "2025", title: "BUT MMI Year 3", body: "Multimedia & Internet program. Specialization in Web Development and Interactive Systems", tag: "STUDIES" },
+    { year: "2025", title: "1st Vice-Président Campus 3", body: "First Vice President of the Federation of Students of Troyes", tag: "NON-PROFIT" },
+    { year: "2025", title: "MMI Festival Odyssey42", body: "MMI Festival in 72 hours, with a team of three developers working on the project. Delivered on time using Three.js", tag: "PROJECT" },
+    { year: "2025", title: "CROUStillant published", body: "Shipped to App Store and Play Store. Live cross-platform app for thousands of students.", tag: "SHIPPED" },
+    { year: "2025", title: "Freelance started", body: "First client work sites, mobile apps, integrations. Lean delivery, high bar.", tag: "FREELANCE" },
+    { year: "2024", title: "Vice President & Treasurer MMI Student Council", body: "Vice President and Treasurer of the MMI Student Council at the IUT de Troyes", tag: "NON-PROFIT" },
   ],
 };

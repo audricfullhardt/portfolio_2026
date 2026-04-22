@@ -20,7 +20,7 @@ export default function Timeline() {
               <span style={{ position: "absolute", left: -22, top: 7 }}>
                 {it.current
                   ? <Badge status="processing" color="oklch(0.78 0.17 162)" />
-                  : <Badge color="var(--border)" />
+                  : <Badge color="var(--dots)" />
                 }
               </span>
               <div className="flex items-baseline gap-3 mb-1.5 flex-wrap">

@@ -1,5 +1,3 @@
-/* components/ui/Primitives.tsx
-   Icônes SVG + hooks partagés (magnetic, tilt, counter) */
 "use client";
 import { useEffect, useRef, useState, ReactNode, SVGProps } from "react";
 
