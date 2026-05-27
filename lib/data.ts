@@ -4,7 +4,10 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "CROUStillant",
-    tagline: { fr: "Menus CROUS en temps réel, iOS & Android", en: "Real-time CROUS menus, iOS & Android" },
+    tagline: {
+      fr: "Menus CROUS en temps réel, iOS & Android",
+      en: "Real-time CROUS menus, iOS & Android",
+    },
     description: {
       fr: "Application mobile cross-platform permettant de consulter en temps réel les menus des restaurants CROUS en France et en outre-mer. Interface fluide, données centralisées via API open source, publication sur Android et iOS.",
       en: "Cross-platform mobile app to check French student cafeteria menus in real time. Clean UX, centralized open-source API, shipped on both Android and iOS.",
@@ -12,19 +15,33 @@ export const PROJECTS: Project[] = [
     technologies: ["React Native", "TypeScript", "Expo"],
     github: "https://github.com/audricfullhardt/CrousApp",
     image: "/projects/croustillant/1.webp",
-    pictures: ["/projects/croustillant/1.webp", "/projects/croustillant/2.webp"],
+    pictures: [
+      "/projects/croustillant/1.webp",
+      "/projects/croustillant/2.webp",
+    ],
     category: "Mobile",
     year: "2025",
     featured: true,
     features: {
-      fr: ["Cross-platform iOS + Android avec Expo", "Cache local pour lecture offline", "Publié sur les stores"],
-      en: ["Cross-platform iOS + Android with Expo", "Local cache for offline reads", "Published on both stores"],
+      fr: [
+        "Cross-platform iOS + Android avec Expo",
+        "Cache local pour lecture offline",
+        "Publié sur les stores",
+      ],
+      en: [
+        "Cross-platform iOS + Android with Expo",
+        "Local cache for offline reads",
+        "Published on both stores",
+      ],
     },
   },
   {
     id: 2,
     title: "Weather App",
-    tagline: { fr: "Prévisions 7 jours et géolocalisation", en: "7-day forecast and geolocation" },
+    tagline: {
+      fr: "Prévisions 7 jours et géolocalisation",
+      en: "7-day forecast and geolocation",
+    },
     description: {
       fr: "Application web météo avec prévisions détaillées sur 7 jours, recherche de villes à l'échelle mondiale et géolocalisation automatique. Focus sur l'UX, la performance et la consommation d'API.",
       en: "Web weather app with detailed 7-day forecasts, worldwide city search and automatic geolocation. Focused on UX, performance and smart API consumption.",
@@ -36,14 +53,25 @@ export const PROJECTS: Project[] = [
     year: "2024",
     featured: true,
     features: {
-      fr: ["UX pensée mobile-first", "Requêtes optimisées et mises en cache", "Géolocalisation avec fallback manuel"],
-      en: ["Mobile-first UX", "Optimised and cached API calls", "Geolocation with manual fallback"],
+      fr: [
+        "UX pensée mobile-first",
+        "Requêtes optimisées et mises en cache",
+        "Géolocalisation avec fallback manuel",
+      ],
+      en: [
+        "Mobile-first UX",
+        "Optimised and cached API calls",
+        "Geolocation with manual fallback",
+      ],
     },
   },
   {
     id: 3,
     title: "ScaleTheme",
-    tagline: { fr: "Notifications temps réel via webhooks", en: "Real-time notifications via webhooks" },
+    tagline: {
+      fr: "Notifications temps réel via webhooks",
+      en: "Real-time notifications via webhooks",
+    },
     description: {
       fr: "Application mobile connectée à un backend Node.js permettant la réception de notifications en temps réel via webhooks lors de nouveaux abonnements. Architecture orientée événements.",
       en: "Mobile app wired to a Node.js backend, receiving real-time notifications via webhooks on new subscriptions. Event-driven architecture.",
@@ -53,14 +81,25 @@ export const PROJECTS: Project[] = [
     category: "Mobile",
     year: "2024",
     features: {
-      fr: ["Backend Node.js + webhooks", "Push notifications temps réel", "Architecture orientée événements"],
-      en: ["Node.js backend + webhooks", "Real-time push notifications", "Event-driven architecture"],
+      fr: [
+        "Backend Node.js + webhooks",
+        "Push notifications temps réel",
+        "Architecture orientée événements",
+      ],
+      en: [
+        "Node.js backend + webhooks",
+        "Real-time push notifications",
+        "Event-driven architecture",
+      ],
     },
   },
   {
     id: 4,
     title: "ThreeJsJourney",
-    tagline: { fr: "Scènes 3D interactives WebGL", en: "Interactive WebGL 3D scenes" },
+    tagline: {
+      fr: "Scènes 3D interactives WebGL",
+      en: "Interactive WebGL 3D scenes",
+    },
     description: {
       fr: "Projet d'exploration avancée de Three.js : scènes 3D interactives, intégration de physics, optimisation des performances et rendu temps réel via WebGL.",
       en: "Deep dive into Three.js: interactive 3D scenes, physics, performance tuning and real-time WebGL rendering.",
@@ -77,7 +116,10 @@ export const PROJECTS: Project[] = [
   {
     id: 5,
     title: "Odyssey42",
-    tagline: { fr: "Aventure spatiale, 3 jours, Festival MMI", en: "Space adventure, 3 days, MMI Festival" },
+    tagline: {
+      fr: "Aventure spatiale, 3 jours, Festival MMI",
+      en: "Space adventure, 3 days, MMI Festival",
+    },
     description: {
       fr: "Aventure spatiale 3D développée en 3 jours lors du Festival MMI 2025. Gameplay interactif, personnage contrôlable, interactions environnementales et assets 3D personnalisés.",
       en: "3D space adventure built in 3 days at Festival MMI 2025. Interactive gameplay, controllable character, environmental interactions, custom assets.",
@@ -91,8 +133,16 @@ export const PROJECTS: Project[] = [
     year: "2025",
     featured: true,
     features: {
-      fr: ["72h de dev en équipe", "Modélisation Blender custom", "Livré et présenté au festival"],
-      en: ["72h team sprint", "Custom Blender models", "Shipped and presented at festival"],
+      fr: [
+        "72h de dev en équipe",
+        "Modélisation Blender custom",
+        "Livré et présenté au festival",
+      ],
+      en: [
+        "72h team sprint",
+        "Custom Blender models",
+        "Shipped and presented at festival",
+      ],
     },
   },
   {
@@ -109,8 +159,45 @@ export const PROJECTS: Project[] = [
     category: "VR / Game",
     year: "2024",
     features: {
-      fr: ["Locomotion VR naturelle", "Interactions manuelles (Meta Quest)", "Gameplay scripté en C#"],
-      en: ["Natural VR locomotion", "Hand-based interactions (Meta Quest)", "Gameplay scripted in C#"],
+      fr: [
+        "Locomotion VR naturelle",
+        "Interactions manuelles (Meta Quest)",
+        "Gameplay scripté en C#",
+      ],
+      en: [
+        "Natural VR locomotion",
+        "Hand-based interactions (Meta Quest)",
+        "Gameplay scripted in C#",
+      ],
+    },
+  },
+  {
+    id: 7,
+    title: "Festival MMI 2026",
+    tagline: {
+      fr: "Expérience narrative 3D, Leo Szilárd",
+      en: "3D narrative experience, Leo Szilárd",
+    },
+    description: {
+      fr: "Expérience interactive 3D développée pour le Festival MMI 2026. Le joueur incarne Leo Szilárd et traverse les étapes clés de sa vie via un terminal Minitel interactif intégré dans une scène 3D modélisée sous Blender. Terminal sur CanvasTexture, blend de caméra custom, narration à choix multiples.",
+      en: "Interactive 3D experience built for Festival MMI 2026. The player embodies Leo Szilárd and navigates key moments of his life through an interactive Minitel terminal embedded in a 3D scene modelled in Blender. CanvasTexture terminal, custom camera blend, branching narrative.",
+    },
+    technologies: ["React Three Fiber", "Three.js", "Blender", "React"],
+    demo: "https://festival-mmi-2026.vercel.app/",
+    category: "3D / WebGL",
+    year: "2026",
+    featured: true,
+    features: {
+      fr: [
+        "Terminal Minitel via CanvasTexture Three.js",
+        "Blend de caméra custom avec easing cubique",
+        "Scénario narratif à choix multiples",
+      ],
+      en: [
+        "Minitel terminal via Three.js CanvasTexture",
+        "Custom camera blend with cubic easing",
+        "Branching narrative scenario",
+      ],
     },
   },
 ];
@@ -140,23 +227,105 @@ export const STACK = [
 
 export const TIMELINE: { fr: TimelineItem[]; en: TimelineItem[] } = {
   fr: [
-    { year: "2026", title: "Recherche d'alternance", body: "Développeur web/mobile disponible septembre 2026 pendant 3 ans. Freelance en parallèle.", current: true, tag: "MAINTENANT" },
-    { year: "2026", title: "EPITA", body: "Entrée en cycle ingénieur pour 3 ans en alternance", tag: "APRÈS" },
-    { year: "2025", title: "BUT MMI 3e année", body: "Métiers du Multimédia et de l'Internet. Spécialisation développement web et dispositifs interactifs", tag: "ÉTUDES" },
-    { year: "2025", title: "1er Vice-Président Campus 3", body: "1er Vice-Président de la Fédération des Étudiants Troyens", tag: "ASSOCIATIF" },
-    { year: "2025", title: "Festival MMI Odyssey42", body: "Festival MMI en 72h, équipe de 3 dev sur le projet. Livré en temps et en heure en Three.js", tag: "PROJET" },
-    { year: "2025", title: "Publication CROUStillant", body: "Mise en production sur App Store et Play Store. App cross-platform live pour des milliers d'étudiants.", tag: "LIVRAISON" },
-    { year: "2025", title: "Début du freelance", body: "Premières missions web sites, applications, intégrations. Cadre léger, exigence haute.", tag: "FREELANCE" },
-    { year: "2024", title: "Vice-Président et Trésorier BDE MMI", body: "Vice-Président et Trésorier du Bureau Des Étudiant MMI de l'IUT de Troyes", tag: "ASSOCIATIF" },
+    {
+      year: "2026",
+      title: "Recherche d'alternance",
+      body: "Développeur web/mobile disponible septembre 2026 pendant 3 ans. Freelance en parallèle.",
+      current: true,
+      tag: "MAINTENANT",
+    },
+    {
+      year: "2026",
+      title: "EPITA",
+      body: "Entrée en cycle ingénieur pour 3 ans en alternance",
+      tag: "APRÈS",
+    },
+    {
+      year: "2025",
+      title: "BUT MMI 3e année",
+      body: "Métiers du Multimédia et de l'Internet. Spécialisation développement web et dispositifs interactifs",
+      tag: "ÉTUDES",
+    },
+    {
+      year: "2025",
+      title: "1er Vice-Président Campus 3",
+      body: "1er Vice-Président de la Fédération des Étudiants Troyens",
+      tag: "ASSOCIATIF",
+    },
+    {
+      year: "2025",
+      title: "Festival MMI Odyssey42",
+      body: "Festival MMI en 72h, équipe de 3 dev sur le projet. Livré en temps et en heure en Three.js",
+      tag: "PROJET",
+    },
+    {
+      year: "2025",
+      title: "Publication CROUStillant",
+      body: "Mise en production sur App Store et Play Store. App cross-platform live pour des milliers d'étudiants.",
+      tag: "LIVRAISON",
+    },
+    {
+      year: "2025",
+      title: "Début du freelance",
+      body: "Premières missions web sites, applications, intégrations. Cadre léger, exigence haute.",
+      tag: "FREELANCE",
+    },
+    {
+      year: "2024",
+      title: "Vice-Président et Trésorier BDE MMI",
+      body: "Vice-Président et Trésorier du Bureau Des Étudiant MMI de l'IUT de Troyes",
+      tag: "ASSOCIATIF",
+    },
   ],
   en: [
-    { year: "2026", title: "Looking for an apprenticeship", body: "Web/mobile developer available September 2026. Freelance in parallel.", current: true, tag: "NOW" },
-    { year: "2026", title: "EPITA", body: "Starting a 3-year work-study engineering cycle", tag: "AFTER" },
-    { year: "2025", title: "BUT MMI Year 3", body: "Multimedia & Internet program. Specialization in Web Development and Interactive Systems", tag: "STUDIES" },
-    { year: "2025", title: "1st Vice-Président Campus 3", body: "First Vice President of the Federation of Students of Troyes", tag: "NON-PROFIT" },
-    { year: "2025", title: "MMI Festival Odyssey42", body: "MMI Festival in 72 hours, with a team of three developers working on the project. Delivered on time using Three.js", tag: "PROJECT" },
-    { year: "2025", title: "CROUStillant published", body: "Shipped to App Store and Play Store. Live cross-platform app for thousands of students.", tag: "SHIPPED" },
-    { year: "2025", title: "Freelance started", body: "First client work sites, mobile apps, integrations. Lean delivery, high bar.", tag: "FREELANCE" },
-    { year: "2024", title: "Vice President & Treasurer MMI Student Council", body: "Vice President and Treasurer of the MMI Student Council at the IUT de Troyes", tag: "NON-PROFIT" },
+    {
+      year: "2026",
+      title: "Looking for an apprenticeship",
+      body: "Web/mobile developer available September 2026. Freelance in parallel.",
+      current: true,
+      tag: "NOW",
+    },
+    {
+      year: "2026",
+      title: "EPITA",
+      body: "Starting a 3-year work-study engineering cycle",
+      tag: "AFTER",
+    },
+    {
+      year: "2025",
+      title: "BUT MMI Year 3",
+      body: "Multimedia & Internet program. Specialization in Web Development and Interactive Systems",
+      tag: "STUDIES",
+    },
+    {
+      year: "2025",
+      title: "1st Vice-Président Campus 3",
+      body: "First Vice President of the Federation of Students of Troyes",
+      tag: "NON-PROFIT",
+    },
+    {
+      year: "2025",
+      title: "MMI Festival Odyssey42",
+      body: "MMI Festival in 72 hours, with a team of three developers working on the project. Delivered on time using Three.js",
+      tag: "PROJECT",
+    },
+    {
+      year: "2025",
+      title: "CROUStillant published",
+      body: "Shipped to App Store and Play Store. Live cross-platform app for thousands of students.",
+      tag: "SHIPPED",
+    },
+    {
+      year: "2025",
+      title: "Freelance started",
+      body: "First client work sites, mobile apps, integrations. Lean delivery, high bar.",
+      tag: "FREELANCE",
+    },
+    {
+      year: "2024",
+      title: "Vice President & Treasurer MMI Student Council",
+      body: "Vice President and Treasurer of the MMI Student Council at the IUT de Troyes",
+      tag: "NON-PROFIT",
+    },
   ],
 };
