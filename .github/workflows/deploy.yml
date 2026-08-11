@@ -44,11 +44,12 @@ jobs:
           name: portfolio-build
           path: out
 
-      - name: Deploy to PREPROD (Apache)
+      - name: Deploy to PREPROD (nginx)
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
-          username: deploy
+          port: 2222
+          username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           source: "out/*"
           target: "/var/www/portfolio-preprod/out"
@@ -66,11 +67,12 @@ jobs:
           name: portfolio-build
           path: out
 
-      - name: Deploy to PROD (Apache)
+      - name: Deploy to PROD (nginx)
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
-          username: deploy
+          port: 2222
+          username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           source: "out/*"
           target: "/var/www/portfolio/out"
